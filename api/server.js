@@ -13,7 +13,8 @@ server.get('/', async (req, res) => {
     const shoutouts = await db('shoutouts');
     res.status(200).json({
       messageOfTheDay: process.env.MOTD,
-      shoutouts});
+      shoutouts
+    });
   } catch (error) {
     console.error('\nERROR', error);
     res.status(500).json({ error: 'Cannot retrieve the shoutouts' });
